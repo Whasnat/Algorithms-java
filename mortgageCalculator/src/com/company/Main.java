@@ -5,13 +5,9 @@ import java.util.Scanner;
 
 public class Main {
 
-//    private static Object Scanner;
-
     public static void main(String[] args) {
-
         double totalPayable = calculateMortgage();
-          System.out.println("Monthly Payable: " + totalPayable);
-        System.out.println(2506.689253401793*12*20);
+        System.out.println("Monthly Payable: " + NumberFormat.getCurrencyInstance().format(totalPayable));
     }
 
     private static double calculateMortgage(){
@@ -43,7 +39,6 @@ public class Main {
             }
             System.out.println("Enter a value between 5 and 50");
         }
-
         return (amount * ((rate * Math.pow((1 + rate), period)) / (Math.pow((1 + rate), period) - 1)));
-    }
-}
+    } // END of calculateMortgage()
+} //End of Main
