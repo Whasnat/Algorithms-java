@@ -5,16 +5,13 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter Principal Amount: ");
-        int amount = input.nextInt();
-        System.out.println("Enter Interest rate: ");
-        double rate = input.nextDouble();
-        System.out.println("Enter Period (Years): ");
-        int period = input.nextInt();
+//    private static Object Scanner;
 
-        double mortgage = calculateMortgage(amount, rate, period);
+    public static void main(String[] args) {
+
+        takeInput();
+
+        double mortgage();
         String totalPayable = NumberFormat.getCurrencyInstance().format(mortgage);
 
         System.out.println("Mortgage: " + totalPayable);
@@ -28,5 +25,16 @@ public class Main {
         return (amount * ((r * Math.pow((1 + r), n)) / (Math.pow((1 + r), n) - 1)));
     }
 
-//    private static void function(){}
+    private static void takeInput(){
+        Scanner input = new Scanner(System.in);
+        while(true){
+            System.out.println("Principal ($1K - $1M): ");
+            int amount = input.nextInt();
+
+            System.out.println("Enter Interest rate: ");
+            double rate = input.nextDouble();
+            System.out.println("Enter Period (Years): ");
+            int period = input.nextInt();
+        }
+    }
 }
